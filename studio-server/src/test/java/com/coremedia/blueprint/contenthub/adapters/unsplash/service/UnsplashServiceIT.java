@@ -1,8 +1,9 @@
 package com.coremedia.blueprint.contenthub.adapters.unsplash.service;
 
-import com.coremedia.blueprint.contenthub.adapters.unsplash.service.collections.Collection;
-import com.coremedia.blueprint.contenthub.adapters.unsplash.service.photos.Photo;
-import com.coremedia.blueprint.contenthub.adapters.unsplash.service.search.SearchResult;
+import com.coremedia.labs.contenthub.adapters.unsplash.service.UnsplashService;
+import com.coremedia.labs.contenthub.adapters.unsplash.service.collections.Collection;
+import com.coremedia.labs.contenthub.adapters.unsplash.service.photos.Photo;
+import com.coremedia.labs.contenthub.adapters.unsplash.service.search.SearchResult;
 import org.junit.Before;
 import org.junit.Test;
 

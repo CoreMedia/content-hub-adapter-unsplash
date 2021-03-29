@@ -1,7 +1,7 @@
 {
   "studioPlugins": [
     {
-      "mainClass": "com.coremedia.blueprint.studio.contenthub.unsplash.ContentHubUnsplashStudioPlugin",
+      "mainClass": "com.coremedia.labs.plugins.contenthub.unsplash.ContentHubUnsplashStudioPlugin",
       "name": "Content Hub - Unsplash"
     }
   ]
