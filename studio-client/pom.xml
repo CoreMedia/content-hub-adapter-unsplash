@@ -50,13 +50,11 @@
   <dependencies>
 
     <!-- PROJECT dependencies -->
-    <!-- TODO: Move icons to generic dependency -->
     <dependency>
-      <groupId>com.coremedia.blueprint</groupId>
-      <artifactId>salesdemo-icons</artifactId>
-      <version>${salesdemo-icons.version}</version>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>studio-client.content-hub-adapter-unsplash-icons</artifactId>
+      <version>${project.version}</version>
       <type>swc</type>
-      <scope>provided</scope>
     </dependency>
 
 

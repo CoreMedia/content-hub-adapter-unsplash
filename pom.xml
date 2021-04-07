@@ -9,8 +9,9 @@
 
   <modules>
     <module>plugin-descriptor</module>
-    <module>studio-server</module>
     <module>studio-client</module>
+    <module>studio-client-icons</module>
+    <module>studio-server</module>
   </modules>
 
   <properties>
