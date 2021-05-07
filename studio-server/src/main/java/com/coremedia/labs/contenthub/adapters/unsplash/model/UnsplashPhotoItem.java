@@ -1,15 +1,18 @@
 package com.coremedia.labs.contenthub.adapters.unsplash.model;
 
-import com.coremedia.labs.contenthub.adapters.unsplash.service.photos.Photo;
 import com.coremedia.contenthub.api.ContentHubBlob;
 import com.coremedia.contenthub.api.ContentHubObjectId;
 import com.coremedia.contenthub.api.UrlBlobBuilder;
 import com.coremedia.contenthub.api.preview.DetailsElement;
 import com.coremedia.contenthub.api.preview.DetailsSection;
+import com.coremedia.labs.contenthub.adapters.unsplash.service.photos.Photo;
 import edu.umd.cs.findbugs.annotations.NonNull;
 import edu.umd.cs.findbugs.annotations.Nullable;
 import org.apache.commons.lang3.StringUtils;
 
+import java.time.ZonedDateTime;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -58,10 +61,11 @@ public class UnsplashPhotoItem extends UnsplashItem {
 
             // Metadata
             new DetailsSection("metadata", List.of(
+                    new DetailsElement<>("description", getPhoto().getDescription()),
                     new DetailsElement<>("dimensions", getPhoto().getWidth() + "x" + getPhoto().getHeight()),
                     new DetailsElement<>("color", getPhoto().getColor()),
-                    new DetailsElement<>("createdAt", getPhoto().getCreatedAt()),
-                    new DetailsElement<>("updatedAt", getPhoto().getUpdatedAt())
+                    new DetailsElement<>("createdAt", formatPreviewDate(getPhoto().getCreatedAt())),
+                    new DetailsElement<>("updatedAt", formatPreviewDate(getPhoto().getUpdatedAt()))
 
             ).stream().filter(p -> Objects.nonNull(p.getValue())).collect(Collectors.toUnmodifiableList())));
   }
@@ -70,6 +74,16 @@ public class UnsplashPhotoItem extends UnsplashItem {
     return Optional.ofNullable(getPhoto().getUrls())
             .map(urls -> urls.get("thumb"))
             .orElse(null);
+  }
+
+  @Nullable
+  private Calendar formatPreviewDate(@Nullable ZonedDateTime zdt) {
+    if (zdt == null) {
+      return null;
+    }
+
+    Calendar calendar = GregorianCalendar.from(zdt);
+    return calendar;
   }
 
   @Nullable

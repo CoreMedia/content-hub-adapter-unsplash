@@ -1,13 +1,14 @@
 package com.coremedia.labs.contenthub.adapters.unsplash.service.users;
 
-import com.coremedia.labs.contenthub.adapters.unsplash.service.UnsplashDateTimeDeserializer;
 import com.coremedia.labs.contenthub.adapters.unsplash.service.photos.Photo;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Map;
+
+import static com.coremedia.labs.contenthub.adapters.unsplash.service.UnsplashConstants.DATE_TIME_PATTERN;
 
 public class User {
 
@@ -15,8 +16,8 @@ public class User {
   private String id;
 
   @JsonProperty("updated_at")
-  @JsonDeserialize(using = UnsplashDateTimeDeserializer.class)
-  private LocalDateTime updatedAt;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+  private ZonedDateTime updatedAt;
 
   @JsonProperty("username")
   private String username;
@@ -77,11 +78,11 @@ public class User {
     this.id = id;
   }
 
-  public LocalDateTime getUpdatedAt() {
+  public ZonedDateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(LocalDateTime updatedAt) {
+  public void setUpdatedAt(ZonedDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 

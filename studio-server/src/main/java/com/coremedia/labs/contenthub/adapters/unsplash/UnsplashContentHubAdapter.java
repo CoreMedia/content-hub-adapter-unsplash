@@ -123,7 +123,7 @@ public class UnsplashContentHubAdapter implements ContentHubAdapter, ContentHubS
 
   @Override
   public ContentHubTransformer transformer() {
-    return null;
+    return new UnsplashContentHubTransformer();
   }
 
 

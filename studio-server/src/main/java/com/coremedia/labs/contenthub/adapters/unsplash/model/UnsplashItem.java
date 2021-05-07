@@ -5,7 +5,7 @@ import com.coremedia.contenthub.api.ContentHubType;
 import com.coremedia.contenthub.api.Item;
 import edu.umd.cs.findbugs.annotations.NonNull;
 
-abstract class UnsplashItem extends UnsplashContentHubObject implements Item {
+public abstract class UnsplashItem extends UnsplashContentHubObject implements Item {
 
   private UnsplashContentHubType type;
 

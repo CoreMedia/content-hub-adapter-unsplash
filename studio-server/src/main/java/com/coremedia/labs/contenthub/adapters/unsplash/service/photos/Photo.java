@@ -1,12 +1,13 @@
 package com.coremedia.labs.contenthub.adapters.unsplash.service.photos;
 
-import com.coremedia.labs.contenthub.adapters.unsplash.service.UnsplashDateTimeDeserializer;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Map;
+
+import static com.coremedia.labs.contenthub.adapters.unsplash.service.UnsplashConstants.DATE_TIME_PATTERN;
 
 public class Photo {
 
@@ -14,16 +15,16 @@ public class Photo {
   private String id;
 
   @JsonProperty("created_at")
-  @JsonDeserialize(using = UnsplashDateTimeDeserializer.class)
-  private LocalDateTime createdAt;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+  private ZonedDateTime createdAt;
 
   @JsonProperty("updated_at")
-  @JsonDeserialize(using = UnsplashDateTimeDeserializer.class)
-  private LocalDateTime updatedAt;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+  private ZonedDateTime updatedAt;
 
   @JsonProperty("promoted_at")
-  @JsonDeserialize(using = UnsplashDateTimeDeserializer.class)
-  private LocalDateTime promotedAt;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+  private ZonedDateTime promotedAt;
 
   @JsonProperty("width")
   private int width;
@@ -75,27 +76,27 @@ public class Photo {
     this.id = id;
   }
 
-  public LocalDateTime getCreatedAt() {
+  public ZonedDateTime getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(LocalDateTime createdAt) {
+  public void setCreatedAt(ZonedDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
-  public LocalDateTime getUpdatedAt() {
+  public ZonedDateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(LocalDateTime updatedAt) {
+  public void setUpdatedAt(ZonedDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 
-  public LocalDateTime getPromotedAt() {
+  public ZonedDateTime getPromotedAt() {
     return promotedAt;
   }
 
-  public void setPromotedAt(LocalDateTime promotedAt) {
+  public void setPromotedAt(ZonedDateTime promotedAt) {
     this.promotedAt = promotedAt;
   }
 

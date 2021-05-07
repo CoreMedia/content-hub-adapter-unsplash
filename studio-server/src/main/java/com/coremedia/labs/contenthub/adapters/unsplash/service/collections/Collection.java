@@ -1,14 +1,15 @@
 package com.coremedia.labs.contenthub.adapters.unsplash.service.collections;
 
-import com.coremedia.labs.contenthub.adapters.unsplash.service.UnsplashDateTimeDeserializer;
 import com.coremedia.labs.contenthub.adapters.unsplash.service.photos.Photo;
 import com.coremedia.labs.contenthub.adapters.unsplash.service.users.User;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Map;
+
+import static com.coremedia.labs.contenthub.adapters.unsplash.service.UnsplashConstants.DATE_TIME_PATTERN;
 
 public class Collection {
 
@@ -22,12 +23,12 @@ public class Collection {
   private String description;
 
   @JsonProperty("published_at")
-  @JsonDeserialize(using = UnsplashDateTimeDeserializer.class)
-  private LocalDateTime publishedAt;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+  private ZonedDateTime publishedAt;
 
   @JsonProperty("updated_at")
-  @JsonDeserialize(using = UnsplashDateTimeDeserializer.class)
-  private LocalDateTime updatedAt;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_PATTERN)
+  private ZonedDateTime updatedAt;
 
   @JsonProperty("curated")
   private boolean curated;
@@ -83,19 +84,19 @@ public class Collection {
     this.description = description;
   }
 
-  public LocalDateTime getPublishedAt() {
+  public ZonedDateTime getPublishedAt() {
     return publishedAt;
   }
 
-  public void setPublishedAt(LocalDateTime publishedAt) {
+  public void setPublishedAt(ZonedDateTime publishedAt) {
     this.publishedAt = publishedAt;
   }
 
-  public LocalDateTime getUpdatedAt() {
+  public ZonedDateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(LocalDateTime updatedAt) {
+  public void setUpdatedAt(ZonedDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 
