@@ -1,4 +1,4 @@
-![CoreMedia Content Cloud Version](https://img.shields.io/static/v1?message=2404&label=CoreMedia%20Content%20Cloud&style=for-the-badge&labelColor=666666&color=672779 "This badge shows the CoreMedia version this project is compatible with. 
+![CoreMedia Content Cloud Version](https://img.shields.io/static/v1?message=10|11|12|13&label=CoreMedia%20Content%20Cloud&style=for-the-badge&labelColor=666666&color=672779 "This badge shows the CoreMedia version this project is compatible with. 
 Please read the versioning section of the project to see what other CoreMedia versions are supported and how to find them.")
 ![Unsplash API Used](https://img.shields.io/static/v1?message=v1&label=Unsplash&20API&style=for-the-badge&labelColor=6FC3B8&color=006CAE "CoreMedia Labs projects may depend on third party systems or APIs. This badge type shows the version number that is required for the selected project version.")
 

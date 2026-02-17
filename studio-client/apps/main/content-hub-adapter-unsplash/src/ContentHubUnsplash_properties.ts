@@ -1,6 +1,6 @@
 import SvgIconUtil from "@coremedia/studio-client.base-models/util/SvgIconUtil";
-import CoreIcons_properties from "@coremedia/studio-client.core-icons/CoreIcons_properties";
-import icon from "./icons/unsplash_16.svg";
+import { personalFolderPicture, typePicture } from "@coremedia/studio-client.common-icons";
+import icon from "./icons/unsplash.svg";
 
 interface ContentHubUnsplash_properties {
 
@@ -21,9 +21,9 @@ const ContentHubUnsplash_properties: ContentHubUnsplash_properties = {
   adapter_type_unsplash_name: "Unsplash",
   adapter_type_unsplash_icon:  SvgIconUtil.getIconStyleClassForSvgIcon(icon),
   folder_type_photo_name: "Photos",
-  folder_type_photo_icon: CoreIcons_properties.personal_folder_picture,
+  folder_type_photo_icon: SvgIconUtil.getIconStyleClassForSvgIcon(personalFolderPicture),
   item_type_photo_name: "Photo",
-  item_type_photo_icon: CoreIcons_properties.type_picture,
+  item_type_photo_icon: SvgIconUtil.getIconStyleClassForSvgIcon(typePicture),
   description_sectionItemKey: "Description",
   dimensions_sectionItemKey: "Dimensions",
   color_sectionItemKey: "Color",
